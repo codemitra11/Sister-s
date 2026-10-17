@@ -1,0 +1,229 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>मेरी छुटकी</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&family=Kalam:wght@300;400;700&display=swap">
+<style>
+/* Layout: big left-aligned sticker title, a tilted letter card, flip cards in a grid, promise list, confetti surprise. */
+:root {
+  --bg: #FFE3EE;
+  --paper: #FFFFFF;
+  --ink: #231942;
+  --muted: #5B4B7A;
+  --pink: #FF4F8B;
+  --yellow: #FFC93C;
+  --blue: #3D8BFF;
+  --mint: #2FCB9A;
+  --on-color: #231942;
+  --shadow: rgba(35, 25, 66, 0.9);
+  --f-display: "Baloo 2", "Noto Sans Devanagari", system-ui, sans-serif;
+  --f-body: "Hind", "Noto Sans Devanagari", system-ui, sans-serif;
+  --f-hand: "Kalam", "Noto Sans Devanagari", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1233; --paper: #2B1F4D; --ink: #FFF1F7; --muted: #CBB9E8;
+    --pink: #FF6FA2; --yellow: #FFD45E; --blue: #6BA6FF; --mint: #4FDDB0;
+    --on-color: #1B1233; --shadow: rgba(0, 0, 0, 0.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1B1233; --paper: #2B1F4D; --ink: #FFF1F7; --muted: #CBB9E8;
+  --pink: #FF6FA2; --yellow: #FFD45E; --blue: #6BA6FF; --mint: #4FDDB0;
+  --on-color: #1B1233; --shadow: rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.7;
+  padding-block: 24px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 980px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* hero */
+.hero { padding-block: 30px 40px; position: relative; }
+.stickers { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.sticker {
+  font: 700 0.95rem var(--f-display); color: var(--on-color); padding: 6px 16px; border-radius: 999px;
+  border: 2.5px solid var(--on-color); box-shadow: 3px 3px 0 var(--on-color);
+}
+.sticker:nth-child(1) { background: var(--yellow); transform: rotate(-3deg); }
+.sticker:nth-child(2) { background: var(--mint); transform: rotate(2deg); }
+.sticker:nth-child(3) { background: var(--blue); transform: rotate(-1.5deg); }
+.hero h1 { font-size: clamp(4rem, 17vw, 9.5rem); font-weight: 800; letter-spacing: -0.01em; color: var(--pink); line-height: 1.02; text-shadow: 4px 4px 0 var(--ink); }
+.hero p.lede { margin-top: 16px; max-width: 28em; font-size: 1.15rem; color: var(--muted); }
+.cta {
+  margin-top: 26px; padding: 14px 28px; font: 800 1.15rem var(--f-display); color: var(--on-color); background: var(--yellow);
+  border: 3px solid var(--on-color); border-radius: 16px; box-shadow: 5px 5px 0 var(--on-color); cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.cta:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--on-color); }
+.cta:active { transform: translate(4px, 4px); box-shadow: 1px 1px 0 var(--on-color); }
+.pop { margin-top: 18px; min-height: 2.4em; font: 700 1.35rem var(--f-display); color: var(--ink); }
+
+/* letter */
+.letter {
+  margin-top: 40px; background: var(--paper); border: 3px solid var(--ink); border-radius: 20px; padding: clamp(22px, 5vw, 52px);
+  box-shadow: 8px 8px 0 var(--blue); transform: rotate(-0.6deg);
+}
+.letter .in { max-width: 36em; font-family: var(--f-hand); font-size: clamp(1.1rem, 2.6vw, 1.28rem); line-height: 1.95; }
+.letter .in p + p { margin-top: 1.1em; }
+.letter .to { font: 800 2rem var(--f-display); color: var(--pink); line-height: 1.2; }
+.letter .sign { margin-top: 1.3em; font: 700 1.5rem var(--f-display); color: var(--blue); }
+
+/* sections */
+.sec { margin-top: 76px; }
+.sec h2 { font-size: clamp(2rem, 6vw, 3.1rem); font-weight: 800; }
+.sec h2 span { background: linear-gradient(transparent 62%, var(--yellow) 62%); padding-inline: 4px; color: var(--ink); }
+.sec .sub { margin-top: 10px; color: var(--muted); }
+
+/* flip cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; margin-top: 28px; }
+.card { perspective: 800px; background: none; border: 0; padding: 0; min-height: 190px; cursor: pointer; text-align: left; font: inherit; color: inherit; min-width: 0; }
+.card .in { position: relative; width: 100%; height: 100%; min-height: 190px; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(.3,.8,.3,1); }
+.card.flip .in { transform: rotateY(180deg); }
+.face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 3px solid var(--on-color);
+  border-radius: 18px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; color: var(--on-color);
+  box-shadow: 5px 5px 0 var(--on-color);
+}
+.front h3 { font-size: 1.8rem; font-weight: 800; }
+.front small { font-weight: 600; font-size: 0.85rem; }
+.back { transform: rotateY(180deg); background: var(--paper); color: var(--ink); justify-content: center; font-family: var(--f-hand); font-size: 1.1rem; line-height: 1.6; border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.c1 .front { background: var(--pink); } .c2 .front { background: var(--yellow); } .c3 .front { background: var(--mint); }
+.c4 .front { background: var(--blue); } .c5 .front { background: var(--pink); } .c6 .front { background: var(--yellow); }
+
+/* promises */
+.promises { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+.promises li {
+  display: flex; gap: 16px; align-items: flex-start; background: var(--paper); border: 3px solid var(--ink); border-radius: 16px;
+  padding: 14px 18px; min-width: 0;
+}
+.promises li:nth-child(even) { margin-left: clamp(0px, 5vw, 48px); }
+.tick { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--mint); color: var(--on-color); display: grid; place-items: center; font-weight: 800; border: 2.5px solid var(--on-color); }
+.promises b { font-family: var(--f-display); font-size: 1.15rem; display: block; line-height: 1.3; }
+.promises span { color: var(--muted); font-size: 0.95rem; }
+
+.foot { margin-top: 76px; font: 700 1.3rem var(--f-display); color: var(--pink); }
+.foot small { display: block; font: 400 0.95rem var(--f-body); color: var(--muted); margin-top: 4px; }
+
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  .letter { transform: none; }
+}
+</style>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header class="hero">
+    <div class="stickers"><span class="sticker">सबसे प्यारी</span><span class="sticker">सबसे शरारती</span><span class="sticker">सबसे ख़ास</span></div>
+    <h1>मेरी<br>छुटकी</h1>
+    <p class="lede">दुनिया की सबसे ज़िद्दी, सबसे हँसमुख और सबसे अच्छी बहन के लिए, उसके भैया की तरफ़ से।</p>
+    <button type="button" class="cta" id="surprise">सरप्राइज़ दबाओ!</button>
+    <p class="pop" id="pop" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <article class="letter">
+      <div class="in">
+        <p class="to">प्यारी छुटकी,</p>
+        <p>आज कोई त्योहार नहीं, कोई बर्थडे नहीं। फिर भी ये छोटा सा तोहफ़ा, क्योंकि भाई को अपनी बहन के लिए कुछ करने का बहाना नहीं चाहिए।</p>
+        <p>तुम मुझसे छोटी हो, पर कई बार तुमने मुझे सिखाया कि ख़ुश कैसे रहते हैं। तुम्हारी हँसी घर की सबसे अच्छी आवाज़ है। और तुम्हारी ज़िद, मैं कितना भी चिढ़ जाऊँ, सच कहूँ तो मुझे उसकी आदत हो गई है।</p>
+        <p>हम लड़ते हैं, रिमोट पर, खाने पर, और पता नहीं किस-किस बात पर। पर सबके सामने मैं तुम्हारा सबसे बड़ा सपोर्टर हूँ और हमेशा रहूँगा। कोई तुम्हें कुछ कहे, तो पहले उसे मुझसे बात करनी पड़ेगी।</p>
+        <p>पढ़ाई हो, सपने हों या कोई उलझन, जो भी बनना चाहो, पूरे दिल से कोशिश करना। गिरोगी तो उठाने के लिए मैं हूँ, और जीतोगी तो सबसे ज़ोर से तालियाँ भी मैं ही बजाऊँगा।</p>
+        <p>बस ऐसी ही रहना: बेफ़िक्र, शरारती और सबकी चहेती।</p>
+        <p class="sign">तुम्हारा भैया</p>
+      </div>
+    </article>
+
+    <section class="sec">
+      <h2><span>तुम्हें क्यों नहीं बदलूँगा</span></h2>
+      <p class="sub">हर कार्ड को छुओ, पीछे एक बात लिखी है।</p>
+      <div class="cards">
+        <button type="button" class="card c1" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारी हँसी</h3><small>छूकर पलटो</small></div><div class="face back">तुम हँसती हो तो पूरा घर हँस देता है। मेरा दिन भी।</div></div></button>
+        <button type="button" class="card c2" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारी ज़िद</h3><small>छूकर पलटो</small></div><div class="face back">थोड़ा तंग करती है, पर इसी वजह से तुम किसी से दबती नहीं। यही चाहिए।</div></div></button>
+        <button type="button" class="card c3" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारे सवाल</h3><small>छूकर पलटो</small></div><div class="face back">तुम्हारे हर "क्यों?" ने मुझे भी सोचना सिखाया।</div></div></button>
+        <button type="button" class="card c4" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारी शरारत</h3><small>छूकर पलटो</small></div><div class="face back">तुम्हारे बिना घर बहुत शांत हो जाएगा, और शांति मुझे पसंद नहीं।</div></div></button>
+        <button type="button" class="card c5" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारा दिल</h3><small>छूकर पलटो</small></div><div class="face back">इतना बड़ा कि सबके लिए जगह है। मेरी बहन ऐसी ही है।</div></div></button>
+        <button type="button" class="card c6" aria-pressed="false"><div class="in"><div class="face front"><h3>तुम्हारे सपने</h3><small>छूकर पलटो</small></div><div class="face back">जो भी बनना हो, बनो। मैं पीछे खड़ा हूँ, हमेशा।</div></div></button>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2><span>भैया के वादे</span></h2>
+      <p class="sub">लिखकर दे रहा हूँ, ताकि बाद में मुकर न सकूँ।</p>
+      <ul class="promises">
+        <li><span class="tick">✓</span><div><b>फ़ोन हमेशा उठाऊँगा</b><span>दिन हो या रात, तुम्हारी कॉल पहली प्राथमिकता।</span></div></li>
+        <li><span class="tick">✓</span><div><b>तुम्हारे सीक्रेट्स सेफ़ हैं</b><span>ज़्यादातर। मम्मी पूछें तो थोड़ा मुश्किल होगा।</span></div></li>
+        <li><span class="tick">✓</span><div><b>तुम्हारी चीज़ों में हिस्सा कम माँगूँगा</b><span>पूरा वादा नहीं, कोशिश पक्की।</span></div></li>
+        <li><span class="tick">✓</span><div><b>हर जीत पर सबसे पहले बधाई</b><span>चाहे छोटी हो या बड़ी, पार्टी पक्की।</span></div></li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      जहाँ भी जाओ, तुम्हारा भैया साथ है।
+      <small>भैया की तरफ़ से, ढेर सारे प्यार के साथ</small>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  document.querySelectorAll('.card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var f = c.classList.toggle('flip');
+      c.setAttribute('aria-pressed', f ? 'true' : 'false');
+    });
+  });
+
+  var msgs = ['तुम दुनिया की बेस्ट बहन हो!', 'भैया को तुम पर बहुत गर्व है!', 'तुम हँसती रहो, बस यही चाहिए!', 'तुम सबसे ख़ास हो, मानो या न मानो!'];
+  var mi = 0;
+  var pop = document.getElementById('pop');
+  var cv = document.getElementById('confetti');
+  var ctx = cv.getContext('2d');
+  var parts = [], running = false;
+  var colors = ['#FF4F8B', '#FFC93C', '#3D8BFF', '#2FCB9A', '#FF8A3D'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function size() { cv.width = window.innerWidth; cv.height = window.innerHeight; }
+  size(); window.addEventListener('resize', size);
+
+  function burst() {
+    for (var i = 0; i < 150; i++) {
+      var a = Math.random() * Math.PI * 2, s = 5 + Math.random() * 10;
+      parts.push({
+        x: cv.width / 2, y: cv.height * 0.4, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 6,
+        w: 6 + Math.random() * 7, h: 10 + Math.random() * 8, r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.4,
+        c: colors[(Math.random() * colors.length) | 0], life: 0
+      });
+    }
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  }
+  function tick() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(function (p) { return p.life < 200 && p.y < cv.height + 30; });
+    parts.forEach(function (p) {
+      p.life++; p.vy += 0.3; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+      ctx.globalAlpha = Math.max(0, 1 - p.life / 200); ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore();
+    });
+    if (parts.length) requestAnimationFrame(tick); else { running = false; ctx.clearRect(0, 0, cv.width, cv.height); }
+  }
+  document.getElementById('surprise').addEventListener('click', function () {
+    pop.textContent = msgs[mi % msgs.length]; mi++;
+    if (!reduce) burst();
+  });
+})();
+</script>
+
+</body></html>
